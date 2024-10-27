@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container .item {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. item is a child of container-->
+    <div class="container">
+        Container
+        <div class="item">
+            Item
+        </div>
+    </div>
+
+    <div class="footer-container">
+        Container
+        <div class="item">
+            Item
+        </div>
+    </div>
+
+    <!-- 2. item is a child of container only 1 level-->
+    <div class="main-container">
+        Container
+        <div class="item">
+            Item
+            <div class="item">
+                Item 1
+            </div>
+            <div class="item">
+                Item 2
+            </div>
+            <div class="item">
+                Item 3
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
