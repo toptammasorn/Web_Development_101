@@ -6,12 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .Top {
+            color: blue;
+        }
 
+        .Top::first-letter {
+            font-size: 40px;
+        }
+
+        .Top::before {
+            content: '?';
+        }
+
+        .Top::after {
+            content: '?';
+        }
+
+        .smile::after {
+            content: '😊';
+        }
     </style>
 </head>
 
 <body>
-
+    <div class="Top smile">TestTop</div>
 </body>
 
 </html>
