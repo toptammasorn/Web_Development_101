@@ -6,81 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container .item {
-            background-color: green;
-        }
-
-        .main-container>.item {
-            background-color: red;
-            padding: 10px;
-        }
-
         .button {
-            border: 0;
-            background-color: gray;
-            padding: 10px;
-        }
-
-        .button.active {
-            background-color: blue;
-            color: white;
-        }
-
-        .button.danger {
-            background-color: red;
-            color: white;
-        }
-
-        .item1+.item2 {
             background-color: blueviolet;
+            border: 0;
+            padding: 20px;
         }
 
-        input[type=text] {
-            border: 1px solid gainsboro;
-            height: 100px;
+        .button:hover {
+            background-color: red;
         }
     </style>
 </head>
 
 <body>
-    <!-- 1. item is a child of container-->
-    <div class="container">
-        Container
-        <div class="item">
-            Item
-        </div>
-    </div>
-
-    <!-- 2. item is a child of container only 1 level-->
-    <div class="main-container">
-        Container
-        <div class="item">
-            Item
-            <div class="item">
-                Item 1
-            </div>
-            <div class="item">
-                Item 2
-            </div>
-            <div class="item">
-                Item 3
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. Change only some styles in childs-->
-    <button class="button">This is button</button>
-    <button class="button active">This is button</button>
-    <button class="button danger">This is button</button>
-
-    <!-- 4. Friends: Found item 1 first then item 2 change-->
-    <div class="item1">Item1</div>
-    <div class="item2">Item2</div>
-
-    <!-- 5. Attribute selector-->
-    <input type="text" name="firstname">
-    <input type="text" name="lastname">
-    <input type="text" name="description">
+    <button class="button">Button</button>
 </body>
 
 </html>
