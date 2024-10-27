@@ -14,6 +14,22 @@
             background-color: red;
             padding: 10px;
         }
+
+        .button {
+            border: 0;
+            background-color: gray;
+            padding: 10px;
+        }
+
+        .button.active {
+            background-color: blue;
+            color: white;
+        }
+
+        .button.danger {
+            background-color: red;
+            color: white;
+        }
     </style>
 </head>
 
@@ -42,6 +58,12 @@
             </div>
         </div>
     </div>
+
+    <!-- 3. Change only some styles in childs-->
+    <button class="button">This is button</button>
+    <button class="button active">This is button</button>
+    <button class="button danger">This is button</button>
+
 </body>
 
 </html>
