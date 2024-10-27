@@ -6,12 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
+        .container {
+            background-color: red;
+        }
+
+        @media screen and (min-width: 768px) {
+            .container {
+                background-color: blue;
+            }
+        }
     </style>
 </head>
 
 <body>
-    
+    <div class="container">
+        Hello World breakpoint
+    </div>
+    <picture>
+        <source media="(max-width: 768px)" srcset="https://picsum.photos/seed/picsum/536/354">
+        <img src="https://picsum.photos/id/237/536/354">
+    </picture>
 </body>
 
 </html>
