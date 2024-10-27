@@ -6,67 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My website</title>
-    <style>
-        /* This will be for dev to read*/
-        /* 1. decorate who (id, class, DOM) 2.how decorate*/
-        body {
-            font-family: 'Kanit';
-            font-size: 14px;
-            background-color: #1b5e20;
-            color: rgb(205, 219, 203);
-        }
-
-        @font-face {
-            font-family: 'Kanit';
-            src: url('./Kanit/Kanit-Regular.ttf');
-        }
-
-        .container {
-            width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 10px;
-        }
-
-        .header {
-            font-size: 30px;
-            text-align: center;
-        }
-
-        .header-form {
-            width: 140px;
-        }
-
-        .flex {
-            display: flex;
-        }
-
-        .form-input {
-            margin-bottom: 10px;
-        }
-
-        input.form,
-        textarea {
-            border: 1px gainsboro solid;
-            width: 100%;
-        }
-
-        .center {
-            text-align: center;
-        }
-
-        .button {
-            border: 0;
-            width: 100%;
-            height: 40px;
-            background-color: #4caf50;
-            color: white;
-        }
-
-        .form-input a {
-            color: rgb(205, 219, 203);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -86,10 +26,16 @@
         </div>
         <div class="flex gender form-input">
             <div class="header-form">Gender</div>
-            <div>
-                <input name="gender" type="radio"> Male
-                <input name="gender" type="radio"> Female
-                <input name="gender" type="radio"> Not specified
+            <div class="flex">
+                <div>
+                    <input name="gender" type="radio"> Male
+                </div>
+                <div>
+                    <input name="gender" type="radio"> Female
+                </div>
+                <div>
+                    <input name="gender" type="radio"> Not specified
+                </div>
             </div>
         </div>
         <div class="form-input">
