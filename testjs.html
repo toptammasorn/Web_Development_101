@@ -10,13 +10,9 @@
 <body>
     <div>Hello World</div>
     Firstname <input id="firstname" class="input" type="text" name="firstname" value="my firstname">
-    Lastname <input id="lastname" class="input" type="text" name="lastname" value="my lastname">
     <script>
-        let inputsDom = document.getElementsByClassName('input');
-        console.log(inputsDom);
-        for (let i = 0; i < inputsDom.length; i++) {
-            console.log(inputsDom[i].value)
-        }
+        let firstnameDom = document.querySelector('.input');
+        console.log(firstnameDom.value);
     </script>
 </body>
 
