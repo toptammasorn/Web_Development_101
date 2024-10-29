@@ -9,9 +9,9 @@
 
 <body>
     <div>Hello World</div>
-    Firstname <input id="firstname" class="input" type="text" name="firstname" value="my firstname">
+    Firstname <input type="text" name="firstname" value="my firstname">
     <script>
-        let firstnameDom = document.querySelector('.input');
+        let firstnameDom = document.querySelector('input[name=firstname]');
         console.log(firstnameDom.value);
     </script>
 </body>
