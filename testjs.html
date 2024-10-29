@@ -11,12 +11,11 @@
     <button id="thisButton" onclick="submitData()">Send</button>
     Firstname <input type="text" name="firstname" value="test">
     <script>
-        let thisLinkDOM = document.getElementById('thisLink');
-        console.log(thisLinkDOM.getAttribute('href'));
-        thisLinkDOM.setAttribute('href', 'https://www.facebook.com');
+        function submitData() {
+            let thisButtonDOM = document.getElementById('thisButton')
+            thisButtonDOM.setAttribute('disabled', 'true');
+        }
 
-        let thisButtonDOM = document.getElementById('thisButton')
-        thisButtonDOM.setAttribute('disabled', 'true');
     </script>
 </body>
 
