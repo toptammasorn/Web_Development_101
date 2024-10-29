@@ -8,16 +8,11 @@
 </head>
 
 <body>
-    <button onclick="clickItem()">butt1</button>
-    <button id="thisbuttom">butt2</button>
+    <div id="hello">Hello <span style="display: none;">Top</span></div>
     <script>
-        let thisbuttomDOM = document.getElementById('thisbuttom');
-        thisbuttomDOM.addEventListener('click', function () {
-            console.log('2 click');
-        })
-        function clickItem() {
-            console.log('1 click');
-        }
+        let helloDOM = document.getElementById('hello');
+        console.log(helloDOM.textContent);
+        console.log(helloDOM.innerText);
     </script>
 </body>
 
