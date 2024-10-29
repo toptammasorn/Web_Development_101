@@ -8,18 +8,15 @@
 </head>
 
 <body>
-    <div>Hello World</div>
-    Firstname <input type="text" name="firstname" value="my firstname">
-    <div>
-        Interests
-        <div><input type="checkbox" name="interest" value="Movies"> Movies</div>
-        <div><input type="checkbox" name="interest" value="Books"> Movies</div>
-        <div><input type="checkbox" name="interest" value="Sports"> Sports</div>
-    </div>
+    <button onclick="userClicked()">Button</button>
+    <div onclick="userClickDIV()">please click</div>
     <script>
-        let checkboxInputs = document.querySelectorAll('input[type="checkbox"]'); // get all checkbox inputs
-        for (let i = 0; i < checkboxInputs.length; i++) {
-            console.log('checkbox value:', checkboxInputs[i].value)
+        function userClicked() {
+            console.log("User clicked the button");
+        }
+
+        function userClickDIV() {
+            console.log("User clicked the div");
         }
     </script>
 </body>
