@@ -8,12 +8,33 @@
 </head>
 
 <body>
-    <div id="hello">Hello <span style="display: none;">Top</span></div>
+    <div>
+        <h2>Interest of user</h2>
+        <div id="content">
+            <!-- display selected interest-->
+        </div>
+    </div>
+    <input type="checkbox" name="interest" value="Movies"> Movies
+    <input type="checkbox" name="interest" value="Book"> Books
+    <input type="checkbox" name="interest" value="Sports"> Sports
+    <button onclick="submitInterest()">Send</button>
     <script>
-        let helloDOM = document.getElementById('hello');
-        console.log(helloDOM.textContent);
-        console.log(helloDOM.innerText);
-        console.log(helloDOM.innerHTML);
+        function submitInterest() {
+            //select all checkbox
+            let interestDOM = document.querySelectorAll('input[name=interest]')
+            let contentHTML = '<ul>'
+            //retrieve value of selected checkbox
+            for (let i = 0; i < interestDOM.length; i++) {
+                if (interestDOM[i].checked) {
+                    contentHTML += '<li>' + interestDOM[i].value + '</li>'
+                }
+            }
+            //loop selected checkbox then html back
+            contentHTML += '</ul>'
+
+            let contentDOM = document.getElementById('content')
+            contentDOM.innerHTML = contentHTML
+        }
     </script>
 </body>
 
