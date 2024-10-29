@@ -8,16 +8,15 @@
 </head>
 
 <body>
-    <div onmouseover="overItem()" onmouseup="upItem()" onmousedown="downItem()">Click here</div>
+    <button onclick="clickItem()">butt1</button>
+    <button id="thisbuttom">butt2</button>
     <script>
-        function overItem() {
-            console.log('Mouse over');
-        }
-        function upItem() {
-            console.log('Mouse up');
-        }
-        function downItem() {
-            console.log('Mouse down');
+        let thisbuttomDOM = document.getElementById('thisbuttom');
+        thisbuttomDOM.addEventListener('click', function () {
+            console.log('2 click');
+        })
+        function clickItem() {
+            console.log('1 click');
         }
     </script>
 </body>
