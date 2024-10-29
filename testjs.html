@@ -8,11 +8,16 @@
 </head>
 
 <body>
-    <input type="text" name="firstname" onkeyup="changeFirstname()">
+    <div onmouseover="overItem()" onmouseup="upItem()" onmousedown="downItem()">Click here</div>
     <script>
-        function changeFirstname() {
-            let firstNameDOM = document.querySelector('input[name=firstname]')
-            console.log("change firstname:", firstNameDOM.value)
+        function overItem() {
+            console.log('Mouse over');
+        }
+        function upItem() {
+            console.log('Mouse up');
+        }
+        function downItem() {
+            console.log('Mouse down');
         }
     </script>
 </body>
