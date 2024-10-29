@@ -8,33 +8,15 @@
 </head>
 
 <body>
-    <div>
-        <h2>Interest of user</h2>
-        <div id="content">
-            <!-- display selected interest-->
-        </div>
-    </div>
-    <input type="checkbox" name="interest" value="Movies"> Movies
-    <input type="checkbox" name="interest" value="Book"> Books
-    <input type="checkbox" name="interest" value="Sports"> Sports
-    <button onclick="submitInterest()">Send</button>
+    <button id="thisButton" onclick="submitData()">Send</button>
+    Firstname <input type="text" name="firstname" value="test">
     <script>
-        function submitInterest() {
-            //select all checkbox
-            let interestDOM = document.querySelectorAll('input[name=interest]')
-            let contentHTML = '<ul>'
-            //retrieve value of selected checkbox
-            for (let i = 0; i < interestDOM.length; i++) {
-                if (interestDOM[i].checked) {
-                    contentHTML += '<li>' + interestDOM[i].value + '</li>'
-                }
-            }
-            //loop selected checkbox then html back
-            contentHTML += '</ul>'
+        let thisLinkDOM = document.getElementById('thisLink');
+        console.log(thisLinkDOM.getAttribute('href'));
+        thisLinkDOM.setAttribute('href', 'https://www.facebook.com');
 
-            let contentDOM = document.getElementById('content')
-            contentDOM.innerHTML = contentHTML
-        }
+        let thisButtonDOM = document.getElementById('thisButton')
+        thisButtonDOM.setAttribute('disabled', 'true');
     </script>
 </body>
 
