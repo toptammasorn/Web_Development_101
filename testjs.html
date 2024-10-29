@@ -9,10 +9,14 @@
 
 <body>
     <div>Hello World</div>
-    Firstname <input id="firstname" type="text" name="firstname" value="test">
+    Firstname <input id="firstname" class="input" type="text" name="firstname" value="my firstname">
+    Lastname <input id="lastname" class="input" type="text" name="lastname" value="my lastname">
     <script>
-        let firstnameDom = document.getElementById('firstname');
-        console.log(firstnameDom.value);
+        let inputsDom = document.getElementsByClassName('input');
+        console.log(inputsDom);
+        for (let i = 0; i < inputsDom.length; i++) {
+            console.log(inputsDom[i].value)
+        }
     </script>
 </body>
 
