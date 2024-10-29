@@ -8,15 +8,19 @@
 </head>
 
 <body>
-    <button onclick="userClicked()">Button</button>
-    <div onclick="userClickDIV()">please click</div>
+    <input type="radio" name="gender" value="male" onchange="changeGender()"> male <br>
+    <input type="radio" name="gender" value="female" onchange="changeGender()" checked="true"> female <br>
+    <input type="radio" name="gender" value="undefined" onchange="changeGender()"> undefined
     <script>
-        function userClicked() {
-            console.log("User clicked the button");
-        }
-
-        function userClickDIV() {
-            console.log("User clicked the div");
+        function changeGender() {
+            let genderInputs = document.querySelectorAll('input[name=gender]')
+            let gender = ''
+            for (let i = 0; i < genderInputs.length; i++) {
+                if (genderInputs[i].checked) {
+                    gender = genderInputs[i].value
+                }
+            }
+            console.log('Selected gender:', gender)
         }
     </script>
 </body>
