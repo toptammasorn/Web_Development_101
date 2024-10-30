@@ -77,7 +77,7 @@ app.delete('/users/:id', (req, res) => {
     // Find the user with the id
     let selectedIndex = users.findIndex(user => user.id == id)
     // delete user from users
-    delete users[selectedIndex]
+    users.splice(selectedIndex, 1)
 
     res.json({
         message: 'delete ok',
