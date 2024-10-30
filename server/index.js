@@ -30,7 +30,14 @@ app.post('/user', (req, res) => {
 // path = PUT /user/:id
 app.put('/user/:id', (req, res) => {
     let id = req.params.id
-    res.send(id)
+
+    // Find the user with the id
+    let selectedIndex = users.findIndex(user => user.id == id)
+    // update user
+
+    // add updated user to users
+
+    res.send(selectedIndex + '')
 });
 
 app.listen(port, (req, res) => {
