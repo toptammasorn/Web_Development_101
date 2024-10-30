@@ -2,9 +2,10 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const app = express();
 
-app.use(bodyparser.json());
-
 const port = 8000;
+
+app.use(bodyparser.json());
+let users = [];
 
 // path = /
 app.get('/test', (req, res) => {
@@ -18,7 +19,12 @@ app.get('/test', (req, res) => {
 
 // path = POST /user
 app.post('/user', (req, res) => {
-    res.send(req.body);
+    let user = req.body
+    users.push(user)
+    res.json({
+        message: 'add ok',
+        user: user
+    })
 });
 
 app.listen(port, (req, res) => {
