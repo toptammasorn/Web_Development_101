@@ -64,11 +64,25 @@ app.patch('/user/:id', (req, res) => {
     res.json({
         message: 'update ok',
         user: updateUser,
-        indexUpdate: selectedIndex
+        indexUpdated: selectedIndex
     })
     // add updated user to users
 
     res.send(selectedIndex + '')
+});
+
+app.delete('/users/:id', (req, res) => {
+    let id = req.params.id
+
+    // Find the user with the id
+    let selectedIndex = users.findIndex(user => user.id == id)
+    // delete user from users
+    delete users[selectedIndex]
+
+    res.json({
+        message: 'delete ok',
+        indexDeleted: selectedIndex
+    })
 });
 
 app.listen(port, (req, res) => {
