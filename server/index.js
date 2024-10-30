@@ -5,7 +5,9 @@ const app = express();
 const port = 8000;
 
 app.use(bodyparser.json());
+
 let users = [];
+let counter = 1;
 
 // path = GET /users
 app.get('/users', (req, res) => {
@@ -15,6 +17,9 @@ app.get('/users', (req, res) => {
 // path = POST /user
 app.post('/user', (req, res) => {
     let user = req.body
+    user.id = counter
+    counter++
+
     users.push(user)
     res.json({
         message: 'add ok',
