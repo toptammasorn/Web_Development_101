@@ -22,6 +22,12 @@ app.post('/user', (req, res) => {
     })
 });
 
+// path = PUT /user/:id
+app.put('/user/:id', (req, res) => {
+    let id = req.params.id
+    res.send(id)
+});
+
 app.listen(port, (req, res) => {
     console.log(`Server is running on port ${port}`)
 })
