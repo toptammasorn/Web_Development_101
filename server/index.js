@@ -7,14 +7,9 @@ const port = 8000;
 app.use(bodyparser.json());
 let users = [];
 
-// path = /
-app.get('/test', (req, res) => {
-    let user = {
-        firstname: 'John',
-        lastname: 'Doe',
-        age: 25
-    }
-    res.json(user)
+// path = GET /users
+app.get('/users', (req, res) => {
+    res.json(users)
 })
 
 // path = POST /user
