@@ -1,4 +1,5 @@
 function submitData() {
+    // Get all the input elements
     let firstNameDOM = document.querySelector('input[name=firstname]')
     let lastNameDOM = document.querySelector('input[name=lastname]')
     let ageDOM = document.querySelector('input[name=age]')
@@ -13,7 +14,7 @@ function submitData() {
             interest += ', '
         }
     }
-
+    // Create a user data object
     let userData = {
         firstname: firstNameDOM.value,
         lastname: lastNameDOM.value,
