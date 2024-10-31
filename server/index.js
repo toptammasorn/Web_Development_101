@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyparser = require('body-parser');
+const mysql = require('mysql2/promise');
 const app = express();
 
 const port = 8000;
@@ -8,6 +9,27 @@ app.use(bodyparser.json());
 
 let users = [];
 let counter = 1;
+
+app.get('/testdb', (req, res) => {
+    // Connect to the database
+    mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'root',
+        database: 'tutorials',
+        port: 8889
+    }).then((conn) => {
+        conn
+            .query('SELECT * FROM users')
+            .then((results) => {
+                res.json(results[0])
+            })
+            .catch((error) => {
+                console.error('Error fetching users:', error.message)
+                res.status(500).json({ error: 'Error fetching users' })
+            })
+    })
+})
 
 // path = GET /users
 app.get('/users', (req, res) => {
@@ -52,8 +74,8 @@ app.put('/users/:id', (req, res) => {
     // update user (handle case: null || old value)
     users[selectedIndex].firstname = updateUser.firstname || users[selectedIndex].firstname
     users[selectedIndex].lastname = updateUser.lastname || users[selectedIndex].lastname
-    users[selectedIndex].age = updateUser.age || users[selectedIndex].lastname
-    users[selectedIndex].gender = updateUser.gender || users[selectedIndex].lastname
+    users[selectedIndex].age = updateUser.age || users[selectedIndex].age
+    users[selectedIndex].gender = updateUser.gender || users[selectedIndex].gender
 
     res.json({
         message: 'update complete',
