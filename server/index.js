@@ -10,25 +10,23 @@ app.use(bodyparser.json());
 let users = [];
 let counter = 1;
 
-app.get('/testdb', (req, res) => {
-    // Connect to the database
-    mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'root',
-        database: 'tutorials',
-        port: 8889
-    }).then((conn) => {
-        conn
-            .query('SELECT * FROM users')
-            .then((results) => {
-                res.json(results[0])
-            })
-            .catch((error) => {
-                console.error('Error fetching users:', error.message)
-                res.status(500).json({ error: 'Error fetching users' })
-            })
-    })
+app.get('/testdb-new', async (req, res) => {
+    try {
+        // Connect to the database
+        const conn = await mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: 'root',
+            database: 'tutorials',
+            port: 8889
+        })
+        const results = await conn.query('SELECT * FROM users')
+        res.json(results[0])
+    } catch (error) {
+        console.error('Error fetching users:', error.message)
+        res.status(500).json({ error: 'Error fetching users' })
+    }
+
 })
 
 // path = GET /users
