@@ -53,6 +53,23 @@ textarea {
     color: white;
 }
 
+.message {
+    background-color: lightgray;
+    color: black;
+    padding: 10px;
+    display: none;
+}
+
+.message.success {
+    background-color: lightgreen;
+    display: block;
+}
+
+.message.danger {
+    background-color: lightcoral;
+    display: block;
+}
+
 .form-input a {
     color: rgb(205, 219, 203);
 }
